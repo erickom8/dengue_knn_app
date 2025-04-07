@@ -1,0 +1,4 @@
+model/modelo_knn.pkl
+venv
+data/dados_dengue.csv
+src/__pycache__
