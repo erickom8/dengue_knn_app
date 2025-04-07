@@ -80,8 +80,7 @@ streamlit run app.py
 │   └── modelo_knn.pkl         # Modelo KNN treinado
 │   └── treinar_modelo.py      # Arquivo para gerar o modelo KNN treinado
 ├── src/
-│   ├── dashboards.py          # Código que possuem as funções de criação dos dashboards
-│   ├── test.py  
+│   ├── dashboards.py          # Código que possuem as funções de criação dos dashboards  
 ├── data/
 │   └── dados_dengue.csv       # Dataset (adicionado manualmente)
 ├── requirements.txt
