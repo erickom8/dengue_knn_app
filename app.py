@@ -9,6 +9,7 @@ from src.dashboard import (
     grafico_pie_dengue,
     heatmap_fever_headache
 )
+from model.treinar_modelo import calcular_metricas
 
 # Configuração da página
 st.set_page_config(page_title="Dashboard de Análise de Dengue", layout="wide")
@@ -54,16 +55,16 @@ st.pyplot(fig5)
 # Título
 st.title("Previsão de Dengue com KNN")
 
-# Carrega o modelo
-with open("model/modelo_knn.pkl", "rb") as f:
-    model = pickle.load(f)
-
 # Parâmetros de entrada para previsão
 st.subheader("Sintomas do paciente:")
 fever = st.selectbox("Febre", [0, 1])
 headache = st.selectbox("Dor de cabeça", [0, 1])
 joint_pain = st.selectbox("Dor nas articulações", [0, 1])
 bleeding = st.selectbox("Sangramento", [0, 1])
+
+# Carrega o modelo
+with open("model/modelo_knn.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # Botão de previsão
 if st.button("Prever"):
@@ -75,3 +76,20 @@ if st.button("Prever"):
     else:
         st.success("Resultado: *Sem Dengue*")
 
+# Exibir as métricas na sidebar
+st.sidebar.header("Métricas do Modelo")
+
+# Botão para calcular métricas
+if st.button("Calcular Métricas"):
+    with st.spinner("Calculando métricas..."):
+        matriz_confusao, relatorio_classificacao, acuracia = calcular_metricas()
+    
+    # Exibir as métricas
+    st.write("Matriz de Confusão:")
+    st.write(matriz_confusao)
+    
+    st.write("Relatório de Classificação:")
+    st.text(relatorio_classificacao)
+    
+    st.write("Acurácia:")
+    st.write(acuracia)
