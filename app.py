@@ -13,7 +13,17 @@ from src.dashboard import (
 # Configuração da página
 st.set_page_config(page_title="Dashboard de Análise de Dengue", layout="wide")
 st.title("Dashboard Interativo de Análise de Dados de Dengue")
+
+st.sidebar.header("Informações Adicionais")
 st.sidebar.image("assets/logo.jpg", use_container_width =True)
+st.sidebar.markdown("""
+### Sobre o Projeto
+Este projeto é um dashboard interativo para análise de dados de dengue, utilizando Streamlit. Ele inclui visualizações de dados e um modelo de previsão de dengue baseado em KNN.
+""")
+st.sidebar.markdown("""
+### Links Úteis
+- [Github do Projeto](https://github.com/erickom8/dengue_knn_app.git)
+""")
 
 
 # Carrega o dataset
