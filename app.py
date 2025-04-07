@@ -77,7 +77,7 @@ if st.button("Prever"):
         st.success("Resultado: *Sem Dengue*")
 
 # Exibir as métricas na sidebar
-st.sidebar.header("Métricas do Modelo")
+st.title("Métricas do Modelo")
 
 # Botão para calcular métricas
 if st.button("Calcular Métricas"):
