@@ -15,6 +15,7 @@ Este projeto realiza **análise exploratória de dados** e **classificação com
 - Previsão de possíveis pacientes com dengue com base nos sintomas: febre, dor de cabeça, dor nas articulações e sangramento.
 - Visualização de dados e gráficos.
 - Estrutura do código modular com separação entre modelo, gráficos e interface.
+- No arquivo Relatório Gestão de Dados.pdf há maiores detalhes sobre o projeto
 
 ---
 
